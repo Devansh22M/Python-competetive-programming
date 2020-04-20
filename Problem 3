@@ -1,0 +1,28 @@
+# Method 1
+#brute force approach
+
+def max_sub(lst):
+    n = len(lst)
+    ans = lst[0]
+    for i in range(n):
+        s = 0
+        for j in range(i, n):
+            s += lst[j]
+            ans = max(ans, s)
+    return ans
+
+
+# Method 2
+# Kadane's algorithm
+
+
+def max_sub(lst):
+    current_sum = ans = lst[0]
+    for i in lst[1:]:
+        current_sum = max(current_sum + i, i)
+        ans = max(ans, current_sum)
+    return ans
+
+
+lst = eval(input())
+print(max_sub(lst))
