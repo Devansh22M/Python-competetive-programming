@@ -1,0 +1,12 @@
+def check_sum(lst, k):
+    check = set()
+    for i in lst:
+        if i in check:
+            return True
+        check.add(k - i)
+    return False
+
+      
+lst = eval(input())
+k = int(input())
+print(check_sum(lst, k))
